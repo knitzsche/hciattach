@@ -13,7 +13,8 @@ confinement: strict
 
 apps:
   attach:
-    command: usr/bin/hciattach
+    command: usr/bin/hciattach /dev/ttyAMA0 bcm43xx 921600 noflow -
+    daemon: oneshot
     plugs: [bluetooth-control, serial-port]
 
 parts:
