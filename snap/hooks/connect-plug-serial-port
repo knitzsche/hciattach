@@ -1,0 +1,6 @@
+#!/bin/sh -e
+touch $SNAP_DATA/connect-srial-port-ran
+if snapctl is-connected bluetooth-control; then
+	touch $SNAP_DATA/connect-srial-port-ran-bluetooth-control-already-connected
+	snapctl start $SNAP_NAME.btattach --enable
+fi
